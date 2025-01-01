@@ -5,3 +5,5 @@ server/dist/
 client/.env
 server/.env
 client/.next
+client/.DS_Store
+server/.DS_Store
