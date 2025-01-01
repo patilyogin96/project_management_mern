@@ -3,16 +3,17 @@ import React, { useState } from 'react'
 import ProjectHeader from '../ProjectHeader';
 import BoardView from '../BoardView';
 import ListView from '../ListView';
+import TimelineView from '../TimelineView';
 
 type Props = {
-    params: { id: string };
-  };
+  params: { id: string };
+};
 
-const Project = ({params}: Props) => {
-    const { id } = params;
-    const [activeTab, setActiveTab] = useState("Board");
-    const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
-    
+const Project = ({ params }: Props) => {
+  const { id } = params;
+  const [activeTab, setActiveTab] = useState("Board");
+  const [isModalNewTaskOpen, setIsModalNewTaskOpen] = useState(false);
+
   return (
     <div>
       <ProjectHeader activeTab={activeTab} setActiveTab={setActiveTab} />
@@ -21,8 +22,12 @@ const Project = ({params}: Props) => {
         <BoardView id={id} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
       )}
 
-       {activeTab === "List" && (
+      {activeTab === "List" && (
         <ListView id={id} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
+      )}
+
+      {activeTab === "Timeline" && (
+        <TimelineView id={id} setIsModalNewTaskOpen={setIsModalNewTaskOpen} />
       )}
 
     </div>
