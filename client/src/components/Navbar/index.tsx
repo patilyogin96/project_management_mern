@@ -5,7 +5,6 @@ import { RootState, useAppDispatch, useAppSelector } from "@/app/redux";
 import { setIsDarkMode, setIsSidebarCollapsed } from "@/state";
 // import { useGetAuthUserQuery } from "@/state/api";
 import { signOut } from "aws-amplify/auth";
-import Image from "next/image";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -49,7 +48,7 @@ const Navbar = () => {
 
       {/* Icons */}
       <div className="flex items-center">
-        <button
+        {/* <button
           onClick={() => dispatch(setIsDarkMode(!isDarkMode))}
           className={
             isDarkMode
@@ -62,8 +61,8 @@ const Navbar = () => {
           ) : (
             <Moon className="h-6 w-6 cursor-pointer dark:text-white" />
           )}
-        </button>
-        <Link
+        </button> */}
+        {/* <Link
           href="/settings"
           className={
             isDarkMode
@@ -72,7 +71,7 @@ const Navbar = () => {
           }
         >
           <Settings className="h-6 w-6 cursor-pointer dark:text-white" />
-        </Link>
+        </Link> */}
         <div className="ml-2 mr-5 hidden min-h-[2em] w-[0.1rem] bg-gray-200 md:inline-block"></div>
         <div className="hidden items-center justify-between md:flex">
           <div className="align-center flex h-9 w-9 justify-center">
@@ -89,16 +88,17 @@ const Navbar = () => {
               <User className="h-6 w-6 cursor-pointer self-center rounded-full dark:text-white" />
             {/* )} */}
           </div>
-          <span className="mx-3 text-gray-800 dark:text-white">
-            {/* {currentUserDetails?.username} */}
+          
+          {/* <span className="mx-3 text-gray-800 dark:text-white">
             Yogin
-          </span>
-          <button
+          </span> */}
+
+          {/* <button
             className="hidden rounded bg-blue-400 px-4 py-2 text-xs font-bold text-white hover:bg-blue-500 md:block"
             onClick={handleSignOut}
           >
             Sign out
-          </button>
+          </button> */}
         </div>
       </div>
     </div>
